@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "docker-dev": "docker-compose up"    
+    "db-docker": "docker-compose up"    
   },
   "devDependencies": {
     "@types/express": "^4.17.12",
