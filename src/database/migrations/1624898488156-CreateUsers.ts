@@ -10,7 +10,7 @@ export class CreateUsers1624898488156 implements MigrationInterface {
             name: "id",
             type: "varchar",
             isPrimary: true,
-            generationStrategy: 'uuid',
+            generationStrategy: "uuid",
           },
           {
             name: "name",
@@ -35,9 +35,9 @@ export class CreateUsers1624898488156 implements MigrationInterface {
             type: "timestamp",
             default: "now()",
           },
-        ]
+        ],
       })
-    )
+    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
