@@ -22,9 +22,9 @@ app.use(
 
     return response.status(500).json({
       status: "error",
-      message: "Internal server error",
+      message: "Erro interno do servidor, tente novamente",
     });
   }
 );
 
-app.listen(3333, () => console.log("Server is running"));
+app.listen(3333, () => console.log("Server executando..."));
