@@ -3,13 +3,13 @@ import { TagsRepositories } from "../repositories/TagsRepositories";
 
 class CreateTagService {
   async execute(name: string) {
-    const tagsRepositories = getCustomRepository(TagsRepositories);
+    const tagsRepository = getCustomRepository(TagsRepositories);
 
     if (!name) {
       throw new Error("Incorrect name!");
     }
 
-    const tagAlreadyExists = await tagsRepositories.findOne({
+    const tagAlreadyExists = await tagsRepository.findOne({
       name,
     });
 
@@ -17,11 +17,13 @@ class CreateTagService {
       throw new Error("Tag already exists");
     }
 
-    const tag = tagsRepositories.create({
+    const tag = tagsRepository.create({
       name,
     });
 
-    await tagsRepositories.save(tag);
-    return tag
+    await tagsRepository.save(tag);
+    return tag;
   }
 }
+
+export { CreateTagService };
