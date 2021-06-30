@@ -25,7 +25,7 @@ const router = Router();
 
 router.post("/auth", authenticateUserController.handle);
 
-router.get("/users", listUsersController.handle);
+router.get("/users", ensureAuthenticated, listUsersController.handle);
 router.post("/users", createUserController.handle);
 
 router.get("/tags", listTagsController.handle);
