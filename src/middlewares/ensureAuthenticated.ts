@@ -24,9 +24,9 @@ export function ensureAuthenticated(
       "c012754f5acbd1e47db7d50864d98af1"
     ) as IPayload;
 
-    request.user_id = sub;
-
-    next();
+    request.user_id = sub; 
+    
+    return next();
   } catch (error) {
     return response.status(401).end();
   }
